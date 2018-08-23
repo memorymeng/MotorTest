@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mydbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Motor_shaft_extension">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Series" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Config" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Desc" Type="varchar" MaxLength="45" />
+          <Property Name="HeadMin" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="HeadNom" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="HeadMax" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="BaseMin" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="BaseNom" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="BaseMax" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Motor_test_data">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Motor" Type="int" Nullable="false" />
+          <Property Name="ID_Motor_Shaft_Extension" Type="int" Nullable="false" />
+          <Property Name="InputReportID" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="InputCustomerName" Type="varchar" MaxLength="45" />
+          <Property Name="InputRuntimeForIdleTest" Type="varchar" MaxLength="45" />
+          <Property Name="InputComments" Type="varchar" MaxLength="45" />
+          <Property Name="InputFieldName" Type="varchar" MaxLength="45" />
+          <Property Name="InputMotorSN" Type="varchar" MaxLength="45" />
+          <Property Name="InputTestedBy" Type="varchar" MaxLength="45" />
+          <Property Name="InputTestDate" Type="varchar" MaxLength="45" />
+          <Property Name="InputChooseSupplier" Type="varchar" MaxLength="45" />
+          <Property Name="InputChooseSeries" Type="varchar" MaxLength="45" />
+          <Property Name="InputChooseModel" Type="varchar" MaxLength="45" />
+          <Property Name="InputShaftExtensionBase" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="InputChooseMotorConfigForShaftExtension" Type="varchar" MaxLength="45" />
+          <Property Name="OutputRecommendedLowVoltStartAt60Hz" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="InputChooseDidMotorStartedWithLowVoltAt60Hz" Type="varchar" MaxLength="45" />
+          <Property Name="InputRPMAfterLowVoltStart" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputIsRPMAfterLowVoltNoLessThan3400" Type="varchar" MaxLength="45" />
+          <Property Name="InputVoltVa" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="InputVoltVb" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="InputVoltVc" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputVoltAverage" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OuputVoltHigh" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputVoltLow" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputVoltDeviationHigh" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputVoltDeviationLow" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputVoltDeviationMax" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputMaxAllowableVoltDeviation" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputIsMAVDSmallerThanPercent1point5" Type="varchar" MaxLength="45" />
+          <Property Name="InputCurrentIAWithMaxVoltUnbalancePercent1point5" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="InputCurrentIBWithMaxVoltUnbalancePercent1point5" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="InputCurrentICWithMaxVoltUnbalancePercent1point5" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputCurrentIHigh" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputCurrentILow" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputCurrentIAverage" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputCurrentDeviationHigh" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputCurrentDeviationLow" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputMaxCurrentDeviation" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputMaxAllowableCurrentDeviation" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputIsMACDSmallerThanPercent3" Type="varchar" MaxLength="45" />
+          <Property Name="InputMotorTempRiseAfter11MinutesOfFullVoltTest" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="InputMotorTemp" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="InputMotorWindingResistanceAB" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InputMotorWindingResistanceBC" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InputMotorWindingResistanceCA" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputCatalogMotorWindingResistanceAt20CMin" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputCatalogMotorWindingResistanceMinCorrected" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputCatalogMotorWindingResistanceAt20CMax" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputCatalogMotorWindingResistanceMaxCorrected" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceABPassed" Type="varchar" MaxLength="45" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceBCPassed" Type="varchar" MaxLength="45" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceCAPassed" Type="varchar" MaxLength="45" />
+          <Property Name="OutputAverageMeasuredMotorWindingResistance" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseHigh" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseLow" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromHighToAverage" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromAverageToLow" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputMaxDeviationOfMotorWindingResistanceFromAverage" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputPercentMaxAllowableDeviationFromAverage" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputIsPercentMADSmallerThan3" Type="varchar" MaxLength="45" />
+          <Property Name="OutputInsulationResistanceCheckMinVoltRequired" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputInsulationResistanceCorrectionFactor" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InputMeasuredInsulationResistance" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputInsulationResistanceCorrectedTo40C" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputIsInsulationResistanceCorrectedTo40CGreaterThan1000" Type="varchar" MaxLength="45" />
+          <Property Name="InputShaftSidePlay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="OutputIsShaftSidePlayNoGreaterThanPoint25" Type="varchar" MaxLength="45" />
+          <Property Name="InputShaftExtensionHead" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="OutputCatalogShaftExtensionHeadMax" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="OutputCatalogShaftExtensionHeadMin" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="OutputIsShaftExtensionHeadTestPassed" Type="varchar" MaxLength="45" />
+          <Property Name="InputOilQualityCheck" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputIsOilQualityBetterThan28kV" Type="varchar" MaxLength="45" />
+          <Property Name="InputChooseIsAirTestPassed" Type="varchar" MaxLength="45" />
+          <Property Name="OutputIsMotorTempRiseAfter11MinutesOfFullVoltTestLessThan40C" Type="varchar" MaxLength="45" />
+          <Property Name="InputRPMAt60HzWhenMotorTempReached60C" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputIsRPMAt60HzWhenMotorTempReached60CHigherThan3500" Type="varchar" MaxLength="45" />
+          <Property Name="InputMotorTempAfterIdle" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="InputMotorWindingResistanceABAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InputMotorWindingResistanceBCAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InputMotorWindingResistanceCAAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputCatalogMotorWindingResistanceMinCorrectedAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputCatalogMotorWindingResistanceMaxCorrectedAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceABPassedAfterIdle" Type="varchar" MaxLength="45" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceBCPassedAfterIdle" Type="varchar" MaxLength="45" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceCAPassedAfterIdle" Type="varchar" MaxLength="45" />
+          <Property Name="OutputAverageMeasuredMotorWindingResistanceAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseHighAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseLowAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromHighToAvgsAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromAvgsToLowAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputMaxDeviationOfMotorWindingResistanceFromAverageAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OutputPercentMaxAllowableDeviationFromAverageAfterIdle" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputIsPercentMADSmallerThan3AfterIdle" Type="varchar" MaxLength="45" />
+          <Property Name="OutputInsulationResistanceCorrectionFactorAfterIdle" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="InputMeasuredInsulationResistanceAfterIdle" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputInsulationResistanceCorrectedTo40CAfterIdle" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="OutputIsInsulationResistanceCorrectedTo40CExceed1000AfterIdle" Type="varchar" MaxLength="45" />
+          <Property Name="InputTempAtWhichPIWasPerformed" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="InputPITestForMotorAtTempBellow38C" Type="decimal" Precision="10" Scale="1" />
+          <Property Name="OutputIsPIHigherThanOne" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Motors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Series" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Desc" Type="varchar" MaxLength="45" />
+          <Property Name="Model" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Power" Type="decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="Volts" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Current" Type="decimal" Precision="10" Scale="1" Nullable="false" />
+          <Property Name="PhToPhResistance" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Weight" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="Length" Type="decimal" Precision="10" Scale="1" />
+        </EntityType>
+        <Association Name="Motor">
+          <End Role="Motors" Type="Self.Motors" Multiplicity="1" />
+          <End Role="Motor_test_data" Type="Self.Motor_test_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motors">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motor_test_data">
+              <PropertyRef Name="ID_Motor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Motor_Shaft_Extension1">
+          <End Role="Motor_shaft_extension" Type="Self.Motor_shaft_extension" Multiplicity="1" />
+          <End Role="Motor_test_data" Type="Self.Motor_test_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motor_shaft_extension">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motor_test_data">
+              <PropertyRef Name="ID_Motor_Shaft_Extension" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mydbModelStoreContainer">
+          <EntitySet Name="Motor_shaft_extension" EntityType="Self.Motor_shaft_extension" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="Motor_test_data" EntityType="Self.Motor_test_data" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="Motors" EntityType="Self.Motors" Schema="mydb" store:Type="Tables" />
+          <AssociationSet Name="Motor" Association="Self.Motor">
+            <End Role="Motors" EntitySet="Motors" />
+            <End Role="Motor_test_data" EntitySet="Motor_test_data" />
+          </AssociationSet>
+          <AssociationSet Name="Motor_Shaft_Extension1" Association="Self.Motor_Shaft_Extension1">
+            <End Role="Motor_shaft_extension" EntitySet="Motor_shaft_extension" />
+            <End Role="Motor_test_data" EntitySet="Motor_test_data" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mydbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Motor_shaft_extension">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Series" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Config" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Desc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="HeadMin" Type="Decimal" Nullable="false" />
+          <Property Name="HeadNom" Type="Decimal" Nullable="false" />
+          <Property Name="HeadMax" Type="Decimal" Nullable="false" />
+          <Property Name="BaseMin" Type="Decimal" Nullable="false" />
+          <Property Name="BaseNom" Type="Decimal" Nullable="false" />
+          <Property Name="BaseMax" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Motor_test_data" Relationship="Self.Motor_Shaft_Extension1" FromRole="Motor_shaft_extension" ToRole="Motor_test_data" />
+        </EntityType>
+        <EntityType Name="Motor_test_data">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Motor" Type="Int32" Nullable="false" />
+          <Property Name="ID_Motor_Shaft_Extension" Type="Int32" Nullable="false" />
+          <Property Name="InputReportID" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InputCustomerName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputRuntimeForIdleTest" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputComments" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputFieldName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputMotorSN" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputTestedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputTestDate" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputChooseSupplier" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputChooseSeries" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputChooseModel" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputShaftExtensionBase" Type="Decimal" />
+          <Property Name="InputChooseMotorConfigForShaftExtension" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputRecommendedLowVoltStartAt60Hz" Type="Decimal" />
+          <Property Name="InputChooseDidMotorStartedWithLowVoltAt60Hz" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputRPMAfterLowVoltStart" Type="Decimal" />
+          <Property Name="OutputIsRPMAfterLowVoltNoLessThan3400" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputVoltVa" Type="Decimal" />
+          <Property Name="InputVoltVb" Type="Decimal" />
+          <Property Name="InputVoltVc" Type="Decimal" />
+          <Property Name="OutputVoltAverage" Type="Decimal" />
+          <Property Name="OuputVoltHigh" Type="Decimal" />
+          <Property Name="OutputVoltLow" Type="Decimal" />
+          <Property Name="OutputVoltDeviationHigh" Type="Decimal" />
+          <Property Name="OutputVoltDeviationLow" Type="Decimal" />
+          <Property Name="OutputVoltDeviationMax" Type="Decimal" />
+          <Property Name="OutputMaxAllowableVoltDeviation" Type="Decimal" />
+          <Property Name="OutputIsMAVDSmallerThanPercent1point5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputCurrentIAWithMaxVoltUnbalancePercent1point5" Type="Decimal" />
+          <Property Name="InputCurrentIBWithMaxVoltUnbalancePercent1point5" Type="Decimal" />
+          <Property Name="InputCurrentICWithMaxVoltUnbalancePercent1point5" Type="Decimal" />
+          <Property Name="OutputCurrentIHigh" Type="Decimal" />
+          <Property Name="OutputCurrentILow" Type="Decimal" />
+          <Property Name="OutputCurrentIAverage" Type="Decimal" />
+          <Property Name="OutputCurrentDeviationHigh" Type="Decimal" />
+          <Property Name="OutputCurrentDeviationLow" Type="Decimal" />
+          <Property Name="OutputMaxCurrentDeviation" Type="Decimal" />
+          <Property Name="OutputMaxAllowableCurrentDeviation" Type="Decimal" />
+          <Property Name="OutputIsMACDSmallerThanPercent3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputMotorTempRiseAfter11MinutesOfFullVoltTest" Type="Decimal" />
+          <Property Name="InputMotorTemp" Type="Decimal" />
+          <Property Name="InputMotorWindingResistanceAB" Type="Decimal" />
+          <Property Name="InputMotorWindingResistanceBC" Type="Decimal" />
+          <Property Name="InputMotorWindingResistanceCA" Type="Decimal" />
+          <Property Name="OutputCatalogMotorWindingResistanceAt20CMin" Type="Decimal" />
+          <Property Name="OutputCatalogMotorWindingResistanceMinCorrected" Type="Decimal" />
+          <Property Name="OutputCatalogMotorWindingResistanceAt20CMax" Type="Decimal" />
+          <Property Name="OutputCatalogMotorWindingResistanceMaxCorrected" Type="Decimal" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceABPassed" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceBCPassed" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceCAPassed" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputAverageMeasuredMotorWindingResistance" Type="Decimal" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseHigh" Type="Decimal" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseLow" Type="Decimal" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromHighToAverage" Type="Decimal" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromAverageToLow" Type="Decimal" />
+          <Property Name="OutputMaxDeviationOfMotorWindingResistanceFromAverage" Type="Decimal" />
+          <Property Name="OutputPercentMaxAllowableDeviationFromAverage" Type="Decimal" />
+          <Property Name="OutputIsPercentMADSmallerThan3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputInsulationResistanceCheckMinVoltRequired" Type="Decimal" />
+          <Property Name="OutputInsulationResistanceCorrectionFactor" Type="Decimal" />
+          <Property Name="InputMeasuredInsulationResistance" Type="Decimal" />
+          <Property Name="OutputInsulationResistanceCorrectedTo40C" Type="Decimal" />
+          <Property Name="OutputIsInsulationResistanceCorrectedTo40CGreaterThan1000" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputShaftSidePlay" Type="Decimal" />
+          <Property Name="OutputIsShaftSidePlayNoGreaterThanPoint25" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputShaftExtensionHead" Type="Decimal" />
+          <Property Name="OutputCatalogShaftExtensionHeadMax" Type="Decimal" />
+          <Property Name="OutputCatalogShaftExtensionHeadMin" Type="Decimal" />
+          <Property Name="OutputIsShaftExtensionHeadTestPassed" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputOilQualityCheck" Type="Decimal" />
+          <Property Name="OutputIsOilQualityBetterThan28kV" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputChooseIsAirTestPassed" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputIsMotorTempRiseAfter11MinutesOfFullVoltTestLessThan40C" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputRPMAt60HzWhenMotorTempReached60C" Type="Decimal" />
+          <Property Name="OutputIsRPMAt60HzWhenMotorTempReached60CHigherThan3500" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputMotorTempAfterIdle" Type="Decimal" />
+          <Property Name="InputMotorWindingResistanceABAfterIdle" Type="Decimal" />
+          <Property Name="InputMotorWindingResistanceBCAfterIdle" Type="Decimal" />
+          <Property Name="InputMotorWindingResistanceCAAfterIdle" Type="Decimal" />
+          <Property Name="OutputCatalogMotorWindingResistanceMinCorrectedAfterIdle" Type="Decimal" />
+          <Property Name="OutputCatalogMotorWindingResistanceMaxCorrectedAfterIdle" Type="Decimal" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceABPassedAfterIdle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceBCPassedAfterIdle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputIsMeasuredMotorWindingResistanceCAPassedAfterIdle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputAverageMeasuredMotorWindingResistanceAfterIdle" Type="Decimal" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseHighAfterIdle" Type="Decimal" />
+          <Property Name="OutputMeasuredMotorWindingResistancePhaseToPhaseLowAfterIdle" Type="Decimal" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromHighToAvgsAfterIdle" Type="Decimal" />
+          <Property Name="OutputDeviationOfMotorWindingResistanceFromAvgsToLowAfterIdle" Type="Decimal" />
+          <Property Name="OutputMaxDeviationOfMotorWindingResistanceFromAverageAfterIdle" Type="Decimal" />
+          <Property Name="OutputPercentMaxAllowableDeviationFromAverageAfterIdle" Type="Decimal" />
+          <Property Name="OutputIsPercentMADSmallerThan3AfterIdle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="OutputInsulationResistanceCorrectionFactorAfterIdle" Type="Decimal" />
+          <Property Name="InputMeasuredInsulationResistanceAfterIdle" Type="Decimal" />
+          <Property Name="OutputInsulationResistanceCorrectedTo40CAfterIdle" Type="Decimal" />
+          <Property Name="OutputIsInsulationResistanceCorrectedTo40CExceed1000AfterIdle" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="InputTempAtWhichPIWasPerformed" Type="Decimal" />
+          <Property Name="InputPITestForMotorAtTempBellow38C" Type="Decimal" />
+          <Property Name="OutputIsPIHigherThanOne" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Motor_shaft_extension" Relationship="Self.Motor_Shaft_Extension1" FromRole="Motor_test_data" ToRole="Motor_shaft_extension" />
+          <NavigationProperty Name="Motor" Relationship="Self.Motor1" FromRole="Motor_test_data" ToRole="Motors" />
+        </EntityType>
+        <EntityType Name="Motor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Series" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Desc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Power" Type="Decimal" Nullable="false" />
+          <Property Name="Volts" Type="Decimal" Nullable="false" />
+          <Property Name="Current" Type="Decimal" Nullable="false" />
+          <Property Name="PhToPhResistance" Type="Decimal" Nullable="false" />
+          <Property Name="Weight" Type="Decimal" />
+          <Property Name="Length" Type="Decimal" />
+          <NavigationProperty Name="Motor_test_data" Relationship="Self.Motor1" FromRole="Motors" ToRole="Motor_test_data" />
+        </EntityType>
+        <Association Name="Motor_Shaft_Extension1">
+          <End Role="Motor_shaft_extension" Type="mydbModel.Motor_shaft_extension" Multiplicity="1" />
+          <End Role="Motor_test_data" Type="mydbModel.Motor_test_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motor_shaft_extension">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motor_test_data">
+              <PropertyRef Name="ID_Motor_Shaft_Extension" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Motor1">
+          <End Role="Motors" Type="mydbModel.Motor" Multiplicity="1" />
+          <End Role="Motor_test_data" Type="mydbModel.Motor_test_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motors">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motor_test_data">
+              <PropertyRef Name="ID_Motor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mydbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Motor_shaft_extension" EntityType="mydbModel.Motor_shaft_extension" />
+          <EntitySet Name="Motor_test_data" EntityType="mydbModel.Motor_test_data" />
+          <EntitySet Name="Motors" EntityType="mydbModel.Motor" />
+          <AssociationSet Name="Motor_Shaft_Extension1" Association="Self.Motor_Shaft_Extension1">
+            <End Role="Motor_shaft_extension" EntitySet="Motor_shaft_extension" />
+            <End Role="Motor_test_data" EntitySet="Motor_test_data" />
+          </AssociationSet>
+          <AssociationSet Name="Motor" Association="Self.Motor1">
+            <End Role="Motors" EntitySet="Motors" />
+            <End Role="Motor_test_data" EntitySet="Motor_test_data" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mydbModelStoreContainer" CdmEntityContainer="mydbEntities">
+          <EntitySetMapping Name="Motor_shaft_extension">
+            <EntityTypeMapping TypeName="mydbModel.Motor_shaft_extension">
+              <MappingFragment StoreEntitySet="Motor_shaft_extension">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Config" ColumnName="Config" />
+                <ScalarProperty Name="Desc" ColumnName="Desc" />
+                <ScalarProperty Name="HeadMin" ColumnName="HeadMin" />
+                <ScalarProperty Name="HeadNom" ColumnName="HeadNom" />
+                <ScalarProperty Name="HeadMax" ColumnName="HeadMax" />
+                <ScalarProperty Name="BaseMin" ColumnName="BaseMin" />
+                <ScalarProperty Name="BaseNom" ColumnName="BaseNom" />
+                <ScalarProperty Name="BaseMax" ColumnName="BaseMax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motor_test_data">
+            <EntityTypeMapping TypeName="mydbModel.Motor_test_data">
+              <MappingFragment StoreEntitySet="Motor_test_data">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Motor" ColumnName="ID_Motor" />
+                <ScalarProperty Name="ID_Motor_Shaft_Extension" ColumnName="ID_Motor_Shaft_Extension" />
+                <ScalarProperty Name="InputReportID" ColumnName="InputReportID" />
+                <ScalarProperty Name="InputCustomerName" ColumnName="InputCustomerName" />
+                <ScalarProperty Name="InputRuntimeForIdleTest" ColumnName="InputRuntimeForIdleTest" />
+                <ScalarProperty Name="InputComments" ColumnName="InputComments" />
+                <ScalarProperty Name="InputFieldName" ColumnName="InputFieldName" />
+                <ScalarProperty Name="InputMotorSN" ColumnName="InputMotorSN" />
+                <ScalarProperty Name="InputTestedBy" ColumnName="InputTestedBy" />
+                <ScalarProperty Name="InputTestDate" ColumnName="InputTestDate" />
+                <ScalarProperty Name="InputChooseSupplier" ColumnName="InputChooseSupplier" />
+                <ScalarProperty Name="InputChooseSeries" ColumnName="InputChooseSeries" />
+                <ScalarProperty Name="InputChooseModel" ColumnName="InputChooseModel" />
+                <ScalarProperty Name="InputShaftExtensionBase" ColumnName="InputShaftExtensionBase" />
+                <ScalarProperty Name="InputChooseMotorConfigForShaftExtension" ColumnName="InputChooseMotorConfigForShaftExtension" />
+                <ScalarProperty Name="OutputRecommendedLowVoltStartAt60Hz" ColumnName="OutputRecommendedLowVoltStartAt60Hz" />
+                <ScalarProperty Name="InputChooseDidMotorStartedWithLowVoltAt60Hz" ColumnName="InputChooseDidMotorStartedWithLowVoltAt60Hz" />
+                <ScalarProperty Name="InputRPMAfterLowVoltStart" ColumnName="InputRPMAfterLowVoltStart" />
+                <ScalarProperty Name="OutputIsRPMAfterLowVoltNoLessThan3400" ColumnName="OutputIsRPMAfterLowVoltNoLessThan3400" />
+                <ScalarProperty Name="InputVoltVa" ColumnName="InputVoltVa" />
+                <ScalarProperty Name="InputVoltVb" ColumnName="InputVoltVb" />
+                <ScalarProperty Name="InputVoltVc" ColumnName="InputVoltVc" />
+                <ScalarProperty Name="OutputVoltAverage" ColumnName="OutputVoltAverage" />
+                <ScalarProperty Name="OuputVoltHigh" ColumnName="OuputVoltHigh" />
+                <ScalarProperty Name="OutputVoltLow" ColumnName="OutputVoltLow" />
+                <ScalarProperty Name="OutputVoltDeviationHigh" ColumnName="OutputVoltDeviationHigh" />
+                <ScalarProperty Name="OutputVoltDeviationLow" ColumnName="OutputVoltDeviationLow" />
+                <ScalarProperty Name="OutputVoltDeviationMax" ColumnName="OutputVoltDeviationMax" />
+                <ScalarProperty Name="OutputMaxAllowableVoltDeviation" ColumnName="OutputMaxAllowableVoltDeviation" />
+                <ScalarProperty Name="OutputIsMAVDSmallerThanPercent1point5" ColumnName="OutputIsMAVDSmallerThanPercent1point5" />
+                <ScalarProperty Name="InputCurrentIAWithMaxVoltUnbalancePercent1point5" ColumnName="InputCurrentIAWithMaxVoltUnbalancePercent1point5" />
+                <ScalarProperty Name="InputCurrentIBWithMaxVoltUnbalancePercent1point5" ColumnName="InputCurrentIBWithMaxVoltUnbalancePercent1point5" />
+                <ScalarProperty Name="InputCurrentICWithMaxVoltUnbalancePercent1point5" ColumnName="InputCurrentICWithMaxVoltUnbalancePercent1point5" />
+                <ScalarProperty Name="OutputCurrentIHigh" ColumnName="OutputCurrentIHigh" />
+                <ScalarProperty Name="OutputCurrentILow" ColumnName="OutputCurrentILow" />
+                <ScalarProperty Name="OutputCurrentIAverage" ColumnName="OutputCurrentIAverage" />
+                <ScalarProperty Name="OutputCurrentDeviationHigh" ColumnName="OutputCurrentDeviationHigh" />
+                <ScalarProperty Name="OutputCurrentDeviationLow" ColumnName="OutputCurrentDeviationLow" />
+                <ScalarProperty Name="OutputMaxCurrentDeviation" ColumnName="OutputMaxCurrentDeviation" />
+                <ScalarProperty Name="OutputMaxAllowableCurrentDeviation" ColumnName="OutputMaxAllowableCurrentDeviation" />
+                <ScalarProperty Name="OutputIsMACDSmallerThanPercent3" ColumnName="OutputIsMACDSmallerThanPercent3" />
+                <ScalarProperty Name="InputMotorTempRiseAfter11MinutesOfFullVoltTest" ColumnName="InputMotorTempRiseAfter11MinutesOfFullVoltTest" />
+                <ScalarProperty Name="InputMotorTemp" ColumnName="InputMotorTemp" />
+                <ScalarProperty Name="InputMotorWindingResistanceAB" ColumnName="InputMotorWindingResistanceAB" />
+                <ScalarProperty Name="InputMotorWindingResistanceBC" ColumnName="InputMotorWindingResistanceBC" />
+                <ScalarProperty Name="InputMotorWindingResistanceCA" ColumnName="InputMotorWindingResistanceCA" />
+                <ScalarProperty Name="OutputCatalogMotorWindingResistanceAt20CMin" ColumnName="OutputCatalogMotorWindingResistanceAt20CMin" />
+                <ScalarProperty Name="OutputCatalogMotorWindingResistanceMinCorrected" ColumnName="OutputCatalogMotorWindingResistanceMinCorrected" />
+                <ScalarProperty Name="OutputCatalogMotorWindingResistanceAt20CMax" ColumnName="OutputCatalogMotorWindingResistanceAt20CMax" />
+                <ScalarProperty Name="OutputCatalogMotorWindingResistanceMaxCorrected" ColumnName="OutputCatalogMotorWindingResistanceMaxCorrected" />
+                <ScalarProperty Name="OutputIsMeasuredMotorWindingResistanceABPassed" ColumnName="OutputIsMeasuredMotorWindingResistanceABPassed" />
+                <ScalarProperty Name="OutputIsMeasuredMotorWindingResistanceBCPassed" ColumnName="OutputIsMeasuredMotorWindingResistanceBCPassed" />
+                <ScalarProperty Name="OutputIsMeasuredMotorWindingResistanceCAPassed" ColumnName="OutputIsMeasuredMotorWindingResistanceCAPassed" />
+                <ScalarProperty Name="OutputAverageMeasuredMotorWindingResistance" ColumnName="OutputAverageMeasuredMotorWindingResistance" />
+                <ScalarProperty Name="OutputMeasuredMotorWindingResistancePhaseToPhaseHigh" ColumnName="OutputMeasuredMotorWindingResistancePhaseToPhaseHigh" />
+                <ScalarProperty Name="OutputMeasuredMotorWindingResistancePhaseToPhaseLow" ColumnName="OutputMeasuredMotorWindingResistancePhaseToPhaseLow" />
+                <ScalarProperty Name="OutputDeviationOfMotorWindingResistanceFromHighToAverage" ColumnName="OutputDeviationOfMotorWindingResistanceFromHighToAverage" />
+                <ScalarProperty Name="OutputDeviationOfMotorWindingResistanceFromAverageToLow" ColumnName="OutputDeviationOfMotorWindingResistanceFromAverageToLow" />
+                <ScalarProperty Name="OutputMaxDeviationOfMotorWindingResistanceFromAverage" ColumnName="OutputMaxDeviationOfMotorWindingResistanceFromAverage" />
+                <ScalarProperty Name="OutputPercentMaxAllowableDeviationFromAverage" ColumnName="OutputPercentMaxAllowableDeviationFromAverage" />
+                <ScalarProperty Name="OutputIsPercentMADSmallerThan3" ColumnName="OutputIsPercentMADSmallerThan3" />
+                <ScalarProperty Name="OutputInsulationResistanceCheckMinVoltRequired" ColumnName="OutputInsulationResistanceCheckMinVoltRequired" />
+                <ScalarProperty Name="OutputInsulationResistanceCorrectionFactor" ColumnName="OutputInsulationResistanceCorrectionFactor" />
+                <ScalarProperty Name="InputMeasuredInsulationResistance" ColumnName="InputMeasuredInsulationResistance" />
+                <ScalarProperty Name="OutputInsulationResistanceCorrectedTo40C" ColumnName="OutputInsulationResistanceCorrectedTo40C" />
+                <ScalarProperty Name="OutputIsInsulationResistanceCorrectedTo40CGreaterThan1000" ColumnName="OutputIsInsulationResistanceCorrectedTo40CGreaterThan1000" />
+                <ScalarProperty Name="InputShaftSidePlay" ColumnName="InputShaftSidePlay" />
+                <ScalarProperty Name="OutputIsShaftSidePlayNoGreaterThanPoint25" ColumnName="OutputIsShaftSidePlayNoGreaterThanPoint25" />
+                <ScalarProperty Name="InputShaftExtensionHead" ColumnName="InputShaftExtensionHead" />
+                <ScalarProperty Name="OutputCatalogShaftExtensionHeadMax" ColumnName="OutputCatalogShaftExtensionHeadMax" />
+                <ScalarProperty Name="OutputCatalogShaftExtensionHeadMin" ColumnName="OutputCatalogShaftExtensionHeadMin" />
+                <ScalarProperty Name="OutputIsShaftExtensionHeadTestPassed" ColumnName="OutputIsShaftExtensionHeadTestPassed" />
+                <ScalarProperty Name="InputOilQualityCheck" ColumnName="InputOilQualityCheck" />
+                <ScalarProperty Name="OutputIsOilQualityBetterThan28kV" ColumnName="OutputIsOilQualityBetterThan28kV" />
+                <ScalarProperty Name="InputChooseIsAirTestPassed" ColumnName="InputChooseIsAirTestPassed" />
+                <ScalarProperty Name="OutputIsMotorTempRiseAfter11MinutesOfFullVoltTestLessThan40C" ColumnName="OutputIsMotorTempRiseAfter11MinutesOfFullVoltTestLessThan40C" />
+                <ScalarProperty Name="InputRPMAt60HzWhenMotorTempReached60C" ColumnName="InputRPMAt60HzWhenMotorTempReached60C" />
+                <ScalarProperty Name="OutputIsRPMAt60HzWhenMotorTempReached60CHigherThan3500" ColumnName="OutputIsRPMAt60HzWhenMotorTempReached60CHigherThan3500" />
+                <ScalarProperty Name="InputMotorTempAfterIdle" ColumnName="InputMotorTempAfterIdle" />
+                <ScalarProperty Name="InputMotorWindingResistanceABAfterIdle" ColumnName="InputMotorWindingResistanceABAfterIdle" />
+                <ScalarProperty Name="InputMotorWindingResistanceBCAfterIdle" ColumnName="InputMotorWindingResistanceBCAfterIdle" />
+                <ScalarProperty Name="InputMotorWindingResistanceCAAfterIdle" ColumnName="InputMotorWindingResistanceCAAfterIdle" />
+                <ScalarProperty Name="OutputCatalogMotorWindingResistanceMinCorrectedAfterIdle" ColumnName="OutputCatalogMotorWindingResistanceMinCorrectedAfterIdle" />
+                <ScalarProperty Name="OutputCatalogMotorWindingResistanceMaxCorrectedAfterIdle" ColumnName="OutputCatalogMotorWindingResistanceMaxCorrectedAfterIdle" />
+                <ScalarProperty Name="OutputIsMeasuredMotorWindingResistanceABPassedAfterIdle" ColumnName="OutputIsMeasuredMotorWindingResistanceABPassedAfterIdle" />
+                <ScalarProperty Name="OutputIsMeasuredMotorWindingResistanceBCPassedAfterIdle" ColumnName="OutputIsMeasuredMotorWindingResistanceBCPassedAfterIdle" />
+                <ScalarProperty Name="OutputIsMeasuredMotorWindingResistanceCAPassedAfterIdle" ColumnName="OutputIsMeasuredMotorWindingResistanceCAPassedAfterIdle" />
+                <ScalarProperty Name="OutputAverageMeasuredMotorWindingResistanceAfterIdle" ColumnName="OutputAverageMeasuredMotorWindingResistanceAfterIdle" />
+                <ScalarProperty Name="OutputMeasuredMotorWindingResistancePhaseToPhaseHighAfterIdle" ColumnName="OutputMeasuredMotorWindingResistancePhaseToPhaseHighAfterIdle" />
+                <ScalarProperty Name="OutputMeasuredMotorWindingResistancePhaseToPhaseLowAfterIdle" ColumnName="OutputMeasuredMotorWindingResistancePhaseToPhaseLowAfterIdle" />
+                <ScalarProperty Name="OutputDeviationOfMotorWindingResistanceFromHighToAvgsAfterIdle" ColumnName="OutputDeviationOfMotorWindingResistanceFromHighToAvgsAfterIdle" />
+                <ScalarProperty Name="OutputDeviationOfMotorWindingResistanceFromAvgsToLowAfterIdle" ColumnName="OutputDeviationOfMotorWindingResistanceFromAvgsToLowAfterIdle" />
+                <ScalarProperty Name="OutputMaxDeviationOfMotorWindingResistanceFromAverageAfterIdle" ColumnName="OutputMaxDeviationOfMotorWindingResistanceFromAverageAfterIdle" />
+                <ScalarProperty Name="OutputPercentMaxAllowableDeviationFromAverageAfterIdle" ColumnName="OutputPercentMaxAllowableDeviationFromAverageAfterIdle" />
+                <ScalarProperty Name="OutputIsPercentMADSmallerThan3AfterIdle" ColumnName="OutputIsPercentMADSmallerThan3AfterIdle" />
+                <ScalarProperty Name="OutputInsulationResistanceCorrectionFactorAfterIdle" ColumnName="OutputInsulationResistanceCorrectionFactorAfterIdle" />
+                <ScalarProperty Name="InputMeasuredInsulationResistanceAfterIdle" ColumnName="InputMeasuredInsulationResistanceAfterIdle" />
+                <ScalarProperty Name="OutputInsulationResistanceCorrectedTo40CAfterIdle" ColumnName="OutputInsulationResistanceCorrectedTo40CAfterIdle" />
+                <ScalarProperty Name="OutputIsInsulationResistanceCorrectedTo40CExceed1000AfterIdle" ColumnName="OutputIsInsulationResistanceCorrectedTo40CExceed1000AfterIdle" />
+                <ScalarProperty Name="InputTempAtWhichPIWasPerformed" ColumnName="InputTempAtWhichPIWasPerformed" />
+                <ScalarProperty Name="InputPITestForMotorAtTempBellow38C" ColumnName="InputPITestForMotorAtTempBellow38C" />
+                <ScalarProperty Name="OutputIsPIHigherThanOne" ColumnName="OutputIsPIHigherThanOne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motors">
+            <EntityTypeMapping TypeName="mydbModel.Motor">
+              <MappingFragment StoreEntitySet="Motors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="Desc" ColumnName="Desc" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="Volts" ColumnName="Volts" />
+                <ScalarProperty Name="Current" ColumnName="Current" />
+                <ScalarProperty Name="PhToPhResistance" ColumnName="PhToPhResistance" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
