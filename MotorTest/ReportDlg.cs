@@ -17,7 +17,8 @@ namespace MotorTest
         {
             InitializeComponent();
             motortestdataBindingSource.DataSource = mMotorTestData;
-            this.reportViewer1.RefreshReport();
+            this.reportViewer1.LocalReport.DisplayName = $"{mMotorTestData.InputMotorSN} - ESP MOTOR TEST REPORT"; 
+            //this.reportViewer1.RefreshReport();
         }
 
         private void ReportDlg_Load(object sender, EventArgs e)
